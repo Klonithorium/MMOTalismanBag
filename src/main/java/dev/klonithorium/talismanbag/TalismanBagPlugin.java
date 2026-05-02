@@ -36,6 +36,10 @@ public class TalismanBagPlugin extends JavaPlugin {
         bagDataManager = new BagDataManager(this);
         talismanEffectManager = new TalismanEffectManager(this);
 
+        // Register TalismanBag as a custom MMOItems PlayerInventory source
+        // This makes MMOItems read items from the bag when calculating player stats
+        talismanEffectManager.register();
+
         // Register listeners
         getServer().getPluginManager().registerEvents(new BagGuiListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
@@ -50,12 +54,12 @@ public class TalismanBagPlugin extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Save all open bags and remove active effects
-        if (bagDataManager != null) {
-            bagDataManager.saveAll();
-        }
+        // Remove active effects and save all open bags
         if (talismanEffectManager != null) {
             talismanEffectManager.removeAllEffects();
+        }
+        if (bagDataManager != null) {
+            bagDataManager.saveAll();
         }
         getLogger().info("TalismanBag has been disabled. All data saved.");
     }
