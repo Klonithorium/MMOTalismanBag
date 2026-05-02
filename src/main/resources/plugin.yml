@@ -1,0 +1,32 @@
+name: TalismanBag
+version: '1.0.0'
+main: dev.klonithorium.talismanbag.TalismanBagPlugin
+api-version: '1.21'
+author: klonithorium
+description: A talisman bag with MMOItems integration — store talismans and keep their effects active!
+
+softdepend:
+  - MMOItems
+  - MythicLib
+
+commands:
+  talismanbag:
+    description: Open your Talisman Bag
+    usage: /talismanbag [open|reload|info]
+    aliases:
+      - tbag
+      - talisman
+
+permissions:
+  talismanbag.open:
+    description: Allows the player to open their talisman bag
+    default: true
+  talismanbag.reload:
+    description: Allows reloading the plugin configuration
+    default: op
+  talismanbag.info:
+    description: Allows viewing plugin info
+    default: true
+  talismanbag.bypass.limit:
+    description: Bypass the talisman slot limit
+    default: op
