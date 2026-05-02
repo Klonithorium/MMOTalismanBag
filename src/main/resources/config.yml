@@ -1,0 +1,45 @@
+# TalismanBag Configuration
+# Author: klonithorium
+
+# Number of talisman slots in the bag GUI
+# Max recommended: 45 (5 rows). Must be a multiple of 9.
+bag-size: 27
+
+# The item type in MMOItems that is recognized as a Talisman
+# Items with this MMOItems type will be accepted into the bag
+talisman-item-type: "TALISMAN"
+
+# If true, players can put ANY MMOItems item that has the TALISMAN type
+# If false, only items listed in allowed-talismans are accepted
+use-type-whitelist: true
+
+# Specific MMOItems IDs allowed (only used if use-type-whitelist is false)
+allowed-talismans:
+  - "FIRE_TALISMAN"
+  - "WATER_TALISMAN"
+  - "EARTH_TALISMAN"
+
+# Maximum number of the SAME talisman that can be active at once
+# Set to 1 to prevent duplicate talismans
+max-duplicate-talismans: 1
+
+# Messages (supports & color codes and hex &#RRGGBB)
+messages:
+  prefix: "&#FFD700[TalismanBag] &r"
+  bag-opened: "&aYour Talisman Bag has been opened!"
+  talisman-activated: "&aThe talisman &e{name} &ahas been activated!"
+  talisman-deactivated: "&cThe talisman &e{name} &chas been deactivated."
+  not-a-talisman: "&cThat item is not a recognized Talisman!"
+  duplicate-blocked: "&cYou already have that talisman active!"
+  bag-full: "&cYour Talisman Bag is full!"
+  no-permission: "&cYou don't have permission to do that."
+  reloaded: "&aConfiguration reloaded successfully!"
+  mmoitems-missing: "&cMMOItems is not installed! Talisman effects will not work."
+
+# GUI Appearance
+gui:
+  title: "&#FFD700✦ &6Talisman Bag &r&#FFD700✦"
+  # Slot indices (0-based) used as decorative border/filler
+  filler-enabled: true
+  filler-material: "GRAY_STAINED_GLASS_PANE"
+  filler-name: " "
