@@ -1,5 +1,5 @@
 name: TalismanBag
-version: '1.0.1'
+version: '1.0.2'
 main: dev.klonithorium.talismanbag.TalismanBagPlugin
 api-version: '1.21'
 author: klonithorium
